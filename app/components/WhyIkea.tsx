@@ -2,16 +2,13 @@ import React from "react";
 
 export default function WhyIkea() {
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 border-t border-[#e0e0e0]">
+    <section className="max-w-[1440px] mx-auto px-4 sm:px-8 py-10 sm:py-14 border-t border-[#dfdfdf]">
       <div className="space-y-10">
         <div>
-          <span className="text-xs font-bold uppercase tracking-widest text-[#0058A3] block mb-1">
-            Strategie & Onderbouwing
-          </span>
           <h2 className="text-3xl sm:text-4xl font-black text-zinc-950 tracking-tight">
             Waarom zou IKEA dit doen?
           </h2>
-          <p className="text-base sm:text-lg text-zinc-600 max-w-2xl mt-2">
+          <p className="text-base sm:text-lg text-zinc-600 max-w-2xl mt-2 font-normal">
             Een strategische en merktechnische analyse van de meerwaarde van Kartonglåda voor IKEA.
           </p>
         </div>
@@ -19,48 +16,48 @@ export default function WhyIkea() {
         {/* 4 Pillars Grid - Clean IKEA Card Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Pillar 1 */}
-          <div className="p-8 bg-[#f5f5f5] rounded-none space-y-3 border border-transparent hover:border-zinc-300 transition-colors">
+          <div className="p-8 bg-[#f5f5f5] rounded-none space-y-3 border border-transparent hover:border-[#dfdfdf] transition-colors">
             <span className="text-3xl font-black text-[#0058A3] block">01</span>
             <h3 className="text-xl font-extrabold text-zinc-950">
               People & Planet Positive 2030
             </h3>
-            <p className="text-sm text-zinc-700 leading-relaxed">
+            <p className="text-sm text-zinc-800 leading-relaxed font-normal">
               Sluit naadloos aan bij IKEA&apos;s 2030-ambitie om volledig circulair en klimaatpositief te worden. Verpakkingen op basis van hernieuwbare en gerecyclede materialen krijgen hiermee direct een verlengde levensduur bij de consument thuis.
             </p>
           </div>
 
           {/* Pillar 2 */}
-          <div className="p-8 bg-[#f5f5f5] rounded-none space-y-3 border border-transparent hover:border-zinc-300 transition-colors">
+          <div className="p-8 bg-[#f5f5f5] rounded-none space-y-3 border border-transparent hover:border-[#dfdfdf] transition-colors">
             <span className="text-3xl font-black text-[#0058A3] block">02</span>
             <h3 className="text-xl font-extrabold text-zinc-950">
               Democratisch Design op verpakkingen
             </h3>
-            <p className="text-sm text-zinc-700 leading-relaxed">
+            <p className="text-sm text-zinc-800 leading-relaxed font-normal">
               Vertaalt de kernwaarden van Democratisch Design — vorm, functie, kwaliteit, duurzaamheid en een lage prijs — door naar het omhulsel van het product. Iedereen kan zonder extra kosten een mooi object maken.
             </p>
           </div>
 
           {/* Pillar 3 */}
-          <div className="p-[#f5f5f5] p-8 bg-[#f5f5f5] rounded-none space-y-3 border border-transparent hover:border-zinc-300 transition-colors">
+          <div className="p-8 bg-[#f5f5f5] rounded-none space-y-3 border border-transparent hover:border-[#dfdfdf] transition-colors">
             <span className="text-3xl font-black text-[#0058A3] block">03</span>
             <h3 className="text-xl font-extrabold text-zinc-950">
               Moeiteloos duurzaam maken
             </h3>
-            <p className="text-sm text-zinc-700 leading-relaxed">
+            <p className="text-sm text-zinc-800 leading-relaxed font-normal">
               Maakt de duurzame keuze vanzelfsprekend. Omdat de klant de doos toch al in handen heeft bij een aankoop, kost meedoen geen extra drempel of investering.
             </p>
           </div>
 
           {/* Pillar 4 */}
-          <div className="p-8 bg-[#f5f5f5] rounded-none space-y-3 border border-transparent hover:border-zinc-300 transition-colors">
+          <div className="p-8 bg-[#f5f5f5] rounded-none space-y-3 border border-transparent hover:border-[#dfdfdf] transition-colors">
             <span className="text-3xl font-black text-[#0058A3] block">04</span>
             <h3 className="text-xl font-extrabold text-zinc-950">
               UGC & Bestaande Circulaire Services
             </h3>
-            <p className="text-sm text-zinc-700 leading-relaxed">
+            <p className="text-sm text-zinc-800 leading-relaxed font-normal">
               Genereert authentieke content (User-Generated Content) op sociale media en legt een directe verbinding met bestaande IKEA-initiatieven zoals de{" "}
-              <span className="font-bold text-zinc-950">Tweedekanshoek</span>, de{" "}
-              <span className="font-bold text-zinc-950">Terugkoopservice</span> en onderdelenadvies.
+              <span className="font-extrabold text-zinc-950">Tweedekanshoek</span>, de{" "}
+              <span className="font-extrabold text-zinc-950">Terugkoopservice</span> en onderdelenadvies.
             </p>
           </div>
         </div>
@@ -80,7 +77,7 @@ export default function WhyIkea() {
               64% van Gen Z wil meer betalen voor duurzaamheid, en 79% wil dat bedrijven duurzame keuzes makkelijker maken.
             </h3>
 
-            <p className="text-sm sm:text-base text-blue-100 leading-relaxed">
+            <p className="text-sm sm:text-base text-blue-100 leading-relaxed font-normal">
               Het Kartonglåda concept speelt direct in op deze behoefte door de drempel voor hergebruik weg te nemen met behulp van reeds aanwezige verpakkingen en intuïtieve smartphone-technologie.
             </p>
 
@@ -107,10 +104,6 @@ export default function WhyIkea() {
                 Vergelijkbare upcycling-initiatieven met kartonnen verpakkingen bestaan al op de markt. De unieke waarde van Kartonglåda zit daarom niet in het &apos;eerste zijn&apos;, maar in de wereldwijde schaalbaarheid en de laagdrempelige WebAR-technologie van IKEA.
               </p>
             </div>
-
-            <span className="text-xs text-amber-900 font-bold italic block pt-3 border-t border-amber-200">
-              Onderdeel van de studentenanalyse
-            </span>
           </div>
         </div>
       </div>

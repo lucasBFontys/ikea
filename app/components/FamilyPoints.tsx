@@ -2,20 +2,14 @@ import React from "react";
 
 export default function FamilyPoints() {
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 border-t border-[#e0e0e0]">
+    <section className="max-w-[1440px] mx-auto px-4 sm:px-8 py-10 sm:py-14 border-t border-[#dfdfdf]">
       <div className="bg-[#0058A3] text-white rounded-none p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-lg">
-        {/* Decorative background shape */}
-        <div className="absolute right-0 bottom-0 w-96 h-96 bg-blue-700/30 rounded-full blur-3xl pointer-events-none" />
-
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column */}
           <div className="lg:col-span-7 space-y-6">
             <div className="flex items-center gap-3 flex-wrap">
               <span className="px-3.5 py-1 bg-[#FFDA1A] text-black font-black text-xs uppercase tracking-wider rounded-full shadow-xs">
                 IKEA Family
-              </span>
-              <span className="px-3.5 py-1 bg-white/20 backdrop-blur-xs text-white text-xs font-bold rounded-full border border-white/30">
-                Voorstel van ons concept
               </span>
             </div>
 
@@ -29,7 +23,7 @@ export default function FamilyPoints() {
             </div>
 
             <p className="text-sm sm:text-base text-blue-50 leading-relaxed font-normal">
-              In dit conceptbeloningsmodel sparen IKEA Family-leden punten bij het upcyclen van kartonnen verpakkingen. Door simpelweg de QR-code te scannen en je gemaakte creatie te delen in de app, draag je bij aan een circulaire samenleving én spaar je voor voordelen.
+              Spaar punten bij het upcyclen van kartonnen verpakkingen. Door simpelweg de QR-code te scannen en je gemaakte creatie te delen in de app, draag je bij aan een circulaire samenleving én spaar je voor voordelen.
             </p>
 
             {/* Checkmark benefits list */}
@@ -70,9 +64,6 @@ export default function FamilyPoints() {
 
             {/* Step flow */}
             <div className="pt-4">
-              <span className="text-xs uppercase tracking-wider text-blue-200 font-extrabold block mb-3">
-                Voorgestelde stappenflow:
-              </span>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center text-xs font-bold">
                 <div className="bg-white/10 backdrop-blur-xs p-3 rounded-none border border-white/20">
                   <span className="block text-[#FFDA1A] text-sm font-black mb-0.5">1. Scan</span>
@@ -92,13 +83,9 @@ export default function FamilyPoints() {
                 </div>
               </div>
             </div>
-
-            <p className="text-xs text-blue-200 italic pt-2">
-              * Dit betreft een conceptueel voorstel ter uitbreiding van het IKEA Family programma, geen bestaande functionaliteit. Er worden bewust geen specifieke aantallen punten of geldelijke waarden aan gekoppeld.
-            </p>
           </div>
 
-          {/* Right SVG/CSS Mockup of IKEA App Digital Family Card */}
+          {/* Right SVG/CSS IKEA App Digital Family Card */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="w-full max-w-sm bg-zinc-950 text-white rounded-2xl p-5 shadow-2xl border-4 border-zinc-800 space-y-4">
               {/* App Status Bar */}
@@ -116,11 +103,8 @@ export default function FamilyPoints() {
                   <div className="w-7 h-7 bg-[#0058A3] text-[#FFDA1A] font-black text-xs flex items-center justify-center rounded-xs">
                     IKEA
                   </div>
-                  <span className="text-xs font-bold">IKEA App Mockup</span>
+                  <span className="text-xs font-bold">IKEA App</span>
                 </div>
-                <span className="text-[10px] bg-amber-400 text-black px-2 py-0.5 font-extrabold uppercase tracking-wider rounded-xs">
-                  VOORSTEL
-                </span>
               </div>
 
               {/* Digital Family Card */}
@@ -156,14 +140,7 @@ export default function FamilyPoints() {
 
                 <div className="flex justify-between items-center text-[10px] text-blue-200 font-medium">
                   <span>Pasnummer: 9988 **** 1234</span>
-                  <span className="font-bold text-white">Minor DM Concept</span>
                 </div>
-              </div>
-
-              <div className="text-center">
-                <span className="text-[11px] text-zinc-400 italic">
-                  Digital Card Mockup — Geen echte app-functionaliteit
-                </span>
               </div>
             </div>
           </div>
