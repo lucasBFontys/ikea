@@ -1,110 +1,84 @@
+import Image from "next/image";
 import React from "react";
+
+const PILLARS = [
+  {
+    title: "People & Planet Positive 2030",
+    body: "Sluit aan bij IKEA’s ambitie om circulair en klimaatpositief te worden. Hernieuwbare en gerecyclede verpakkingen krijgen een verlengde levensduur — bij de klant thuis.",
+  },
+  {
+    title: "Democratisch Design op de doos",
+    body: "Vorm, functie, kwaliteit, duurzaamheid en een lage prijs gelden nu ook voor het omhulsel. Iedereen kan zonder extra kosten iets moois maken.",
+  },
+  {
+    title: "Moeiteloos duurzaam",
+    body: "De klant heeft de doos al in handen. Meedoen vraagt geen extra aankoop, geen extra rit, geen extra drempel.",
+  },
+  {
+    title: "UGC én bestaande services",
+    body: "Authentieke content op social, plus een brug naar de Tweedekanshoek, de Terugkoopservice en onderdelenadvies.",
+  },
+] as const;
 
 export default function WhyIkea() {
   return (
-    <section className="max-w-[1440px] mx-auto px-4 sm:px-8 py-10 sm:py-14 border-t border-[#dfdfdf]">
-      <div className="space-y-10">
-        <div>
-          <h2 className="text-3xl sm:text-4xl font-black text-zinc-950 tracking-tight">
+    <section id="waarom-ikea" className="py-16 sm:py-24">
+      <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-10 px-5 sm:px-8 lg:grid-cols-2 lg:gap-16">
+        <div className="max-w-[520px] lg:order-1">
+          <h2 className="text-[32px] leading-[1.2] font-bold tracking-tight text-[#111111] sm:text-[36px]">
             Waarom zou IKEA dit doen?
           </h2>
-          <p className="text-base sm:text-lg text-zinc-600 max-w-2xl mt-2 font-normal">
-            Een strategische en merktechnische analyse van de meerwaarde van Kartonglåda voor IKEA.
+          <p className="mt-5 text-[16px] leading-7 text-[#484848]">
+            Kartonglåda maakt de duurzame keuze vanzelfsprekend en versterkt wat IKEA al belooft: beter dagelijks leven voor de vele mensen, binnen de grenzen van de planeet.
+          </p>
+          <a
+            href="#family-punten"
+            className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-[#111111] px-8 text-[14px] font-bold text-white hover:bg-[#333333]"
+          >
+            Ontdek Family-punten
+          </a>
+        </div>
+        <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#f5f5f5] lg:order-2">
+          <Image
+            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=80"
+            alt="Interieur met lichte materialen en hergebruikte woonaccessoires"
+            fill
+            className="object-cover"
+            sizes="(min-width: 1024px) 50vw, 100vw"
+          />
+        </div>
+      </div>
+
+      <div className="mx-auto mt-16 grid max-w-[1400px] grid-cols-1 gap-10 px-5 sm:grid-cols-2 sm:px-8 lg:grid-cols-4">
+        {PILLARS.map((pillar, index) => (
+          <div key={pillar.title}>
+            <p className="text-[14px] font-bold text-[#0058A3]">0{index + 1}</p>
+            <h3 className="mt-3 text-[18px] leading-snug font-bold text-[#111111]">{pillar.title}</h3>
+            <p className="mt-3 text-[14px] leading-6 text-[#484848]">{pillar.body}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="mx-auto mt-16 grid max-w-[1400px] grid-cols-1 gap-8 px-5 sm:px-8 lg:grid-cols-12">
+        <div className="bg-[#0058A3] px-8 py-10 text-white lg:col-span-8 lg:px-12 lg:py-14">
+          <p className="text-[12px] font-bold tracking-wide text-[#FFDB00] uppercase">
+            Marktinzicht
+          </p>
+          <h3 className="mt-4 text-[28px] leading-tight font-bold sm:text-[32px]">
+            64% van Gen Z wil meer betalen voor duurzaamheid, en 79% wil dat bedrijven duurzame keuzes makkelijker maken.
+          </h3>
+          <p className="mt-5 max-w-[58ch] text-[16px] leading-7 text-white/85">
+            Kartonglåda speelt daarop in: hergebruik via de doos die al in huis is, en vouwhulp via de telefoon die al in je broekzak zit.
+          </p>
+          <p className="mt-8 border-t border-white/25 pt-5 text-[12px] leading-5 text-white/75">
+            Deze cijfers meten uitgesproken intentie, niet automatisch gedrag. Bron: Deloitte Gen Z & Millennial Survey 2024.
           </p>
         </div>
-
-        {/* 4 Pillars Grid - Clean IKEA Card Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Pillar 1 */}
-          <div className="p-8 bg-[#f5f5f5] rounded-none space-y-3 border border-transparent hover:border-[#dfdfdf] transition-colors">
-            <span className="text-3xl font-black text-[#0058A3] block">01</span>
-            <h3 className="text-xl font-extrabold text-zinc-950">
-              People & Planet Positive 2030
-            </h3>
-            <p className="text-sm text-zinc-800 leading-relaxed font-normal">
-              Sluit naadloos aan bij IKEA&apos;s 2030-ambitie om volledig circulair en klimaatpositief te worden. Verpakkingen op basis van hernieuwbare en gerecyclede materialen krijgen hiermee direct een verlengde levensduur bij de consument thuis.
-            </p>
-          </div>
-
-          {/* Pillar 2 */}
-          <div className="p-8 bg-[#f5f5f5] rounded-none space-y-3 border border-transparent hover:border-[#dfdfdf] transition-colors">
-            <span className="text-3xl font-black text-[#0058A3] block">02</span>
-            <h3 className="text-xl font-extrabold text-zinc-950">
-              Democratisch Design op verpakkingen
-            </h3>
-            <p className="text-sm text-zinc-800 leading-relaxed font-normal">
-              Vertaalt de kernwaarden van Democratisch Design — vorm, functie, kwaliteit, duurzaamheid en een lage prijs — door naar het omhulsel van het product. Iedereen kan zonder extra kosten een mooi object maken.
-            </p>
-          </div>
-
-          {/* Pillar 3 */}
-          <div className="p-8 bg-[#f5f5f5] rounded-none space-y-3 border border-transparent hover:border-[#dfdfdf] transition-colors">
-            <span className="text-3xl font-black text-[#0058A3] block">03</span>
-            <h3 className="text-xl font-extrabold text-zinc-950">
-              Moeiteloos duurzaam maken
-            </h3>
-            <p className="text-sm text-zinc-800 leading-relaxed font-normal">
-              Maakt de duurzame keuze vanzelfsprekend. Omdat de klant de doos toch al in handen heeft bij een aankoop, kost meedoen geen extra drempel of investering.
-            </p>
-          </div>
-
-          {/* Pillar 4 */}
-          <div className="p-8 bg-[#f5f5f5] rounded-none space-y-3 border border-transparent hover:border-[#dfdfdf] transition-colors">
-            <span className="text-3xl font-black text-[#0058A3] block">04</span>
-            <h3 className="text-xl font-extrabold text-zinc-950">
-              UGC & Bestaande Circulaire Services
-            </h3>
-            <p className="text-sm text-zinc-800 leading-relaxed font-normal">
-              Genereert authentieke content (User-Generated Content) op sociale media en legt een directe verbinding met bestaande IKEA-initiatieven zoals de{" "}
-              <span className="font-extrabold text-zinc-950">Tweedekanshoek</span>, de{" "}
-              <span className="font-extrabold text-zinc-950">Terugkoopservice</span> en onderdelenadvies.
-            </p>
-          </div>
-        </div>
-
-        {/* Deloitte Survey Highlight & Kritische Noot Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-4">
-          {/* Deloitte Insight Box - Signature IKEA Blue Banner Style */}
-          <div className="lg:col-span-8 p-8 sm:p-10 bg-[#0058A3] text-white rounded-none space-y-6 shadow-md">
-            <div className="flex items-center gap-2 text-[#FFDA1A] text-xs font-black uppercase tracking-wider">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
-              </svg>
-              Marktinzicht & Gen Z Gedrag
-            </div>
-
-            <h3 className="text-2xl sm:text-3xl font-black leading-snug tracking-tight text-white">
-              64% van Gen Z wil meer betalen voor duurzaamheid, en 79% wil dat bedrijven duurzame keuzes makkelijker maken.
-            </h3>
-
-            <p className="text-sm sm:text-base text-blue-100 leading-relaxed font-normal">
-              Het Kartonglåda concept speelt direct in op deze behoefte door de drempel voor hergebruik weg te nemen met behulp van reeds aanwezige verpakkingen en intuïtieve smartphone-technologie.
-            </p>
-
-            <div className="pt-6 border-t border-blue-400/40 text-xs text-blue-200 space-y-1">
-              <p className="font-medium italic">
-                * Let op: Deze statistiek meet de uitgesproken intentie van consumenten, niet noodzakelijk hun daadwerkelijke koop- of hergebruikgedrag.
-              </p>
-              <p className="font-bold text-white uppercase tracking-wider text-[11px]">
-                Bron: Deloitte Gen Z & Millennial Survey 2024
-              </p>
-            </div>
-          </div>
-
-          {/* Kritische Noot Box */}
-          <div className="lg:col-span-4 p-8 bg-amber-50 border-2 border-amber-300 rounded-none space-y-4 flex flex-col justify-between">
-            <div className="space-y-3">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-200 text-amber-950 text-xs font-black uppercase rounded-full">
-                Kritische noot
-              </div>
-              <h4 className="text-xl font-black text-amber-950">
-                Onderscheidend vermogen
-              </h4>
-              <p className="text-xs sm:text-sm text-amber-900 leading-relaxed font-normal">
-                Vergelijkbare upcycling-initiatieven met kartonnen verpakkingen bestaan al op de markt. De unieke waarde van Kartonglåda zit daarom niet in het &apos;eerste zijn&apos;, maar in de wereldwijde schaalbaarheid en de laagdrempelige WebAR-technologie van IKEA.
-              </p>
-            </div>
-          </div>
+        <div className="flex flex-col justify-center bg-[#f5f5f5] px-8 py-10 lg:col-span-4 lg:px-10">
+          <h3 className="text-[22px] font-bold text-[#111111]">Kritische noot</h3>
+          <p className="mt-4 text-[14px] leading-6 text-[#484848]">
+            Vergelijkbare upcycling-initiatieven bestaan al. De waarde van Kartonglåda zit niet in ‘de eerste zijn’, maar in IKEA-schaal, de doos in elke woning, en laagdrempelige WebAR.
+          </p>
         </div>
       </div>
     </section>

@@ -1,174 +1,117 @@
 "use client";
 
+import Image from "next/image";
 import React, { useRef } from "react";
+
+const CARDS = [
+  {
+    title: "Scan & Fold",
+    image:
+      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80",
+    alt: "Iemand scant een QR-code met een smartphone",
+    body: "Een QR-code aan de binnenzijde van de doos opent WebAR in je browser. Geen app-download. Je camera legt vouwlijnen over de fysieke IKEA doos.",
+    href: "#zo-werkt-het",
+    linkLabel: "Bekijk hoe WebAR werkt",
+  },
+  {
+    title: "Vouwpatronen op maat",
+    image:
+      "https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=900&q=80",
+    alt: "Plant in een zelfgemaakte opberger",
+    body: "Fase 1: een bibliotheek van patronen per doosformaat, zoals een plantenpot of opbergdoos. Fase 2: AI maakt een uniek vouwpatroon op basis van afmetingen en jouw idee.",
+    href: "#faq",
+    linkLabel: "Lees meer over fase 2",
+  },
+  {
+    title: "Upcycle Challenge",
+    image:
+      "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=900&q=80",
+    alt: "Kind speelt met een kartonnen creatie",
+    body: "Maandelijkse thema’s zoals de kinderkamer-editie of small space-editie. De community stemt, IKEA licht de meest vindingrijke inzendingen uit.",
+    href: "#out-of-the-box",
+    linkLabel: "Doe mee met de competitie",
+  },
+] as const;
 
 export default function Carousel() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = (direction: "left" | "right") => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = direction === "left" ? -380 : 380;
-      scrollContainerRef.current.scrollBy({
-        left: scrollAmount,
-        behavior: "smooth",
-      });
-    }
+    if (!scrollContainerRef.current) return;
+    const scrollAmount = direction === "left" ? -380 : 380;
+    scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
   };
 
   return (
-    <section aria-label="Drie bouwstenen carrousel" className="max-w-[1440px] mx-auto px-4 sm:px-8 py-8 sm:py-12">
-      {/* Skip Link for Accessibility */}
-      <a
-        href="#after-carousel"
-        className="sr-only focus:not-sr-only focus:inline-block focus:mb-4 focus:px-4 focus:py-2 focus:bg-[#0058A3] focus:text-white focus:rounded-full text-sm font-bold"
-      >
-        Carrousel overslaan en verder lezen
-      </a>
+    <section id="bouwstenen" aria-label="Drie bouwstenen" className="py-8 sm:py-12">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
+        <a
+          href="#after-carousel"
+          className="sr-only focus:not-sr-only focus:mb-4 focus:inline-block focus:rounded-full focus:bg-[#0058A3] focus:px-4 focus:py-2 focus:text-sm focus:font-bold focus:text-white"
+        >
+          Carrousel overslaan en verder lezen
+        </a>
 
-      {/* Header with Circular Controls */}
-      <div className="flex items-end justify-between mb-8">
-        <div>
-          <h2 className="text-3xl sm:text-4xl font-black text-zinc-950 tracking-tight">
+        <div className="mb-8 flex items-end justify-between gap-4">
+          <h2 className="max-w-[20ch] text-[32px] leading-[1.2] font-bold tracking-tight text-[#111111] sm:text-[36px]">
             Drie bouwstenen van Kartonglåda
           </h2>
+          <div className="hidden items-center gap-2 sm:flex">
+            <button
+              onClick={() => handleScroll("left")}
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-[#dfdfdf] bg-white text-[#111111] hover:bg-[#f5f5f5]"
+              aria-label="Vorige kaart"
+              type="button"
+            >
+              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={() => handleScroll("right")}
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-[#dfdfdf] bg-white text-[#111111] hover:bg-[#f5f5f5]"
+              aria-label="Volgende kaart"
+              type="button"
+            >
+              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
         </div>
 
-        {/* Circular Arrow Buttons */}
-        <div className="flex items-center gap-3">
-          <button
-            onClick={() => handleScroll("left")}
-            className="w-11 h-11 rounded-full border border-[#dfdfdf] bg-white hover:bg-[#f5f5f5] text-zinc-950 flex items-center justify-center transition-colors focus:ring-2 focus:ring-[#0058A3]"
-            aria-label="Vorige kaart"
-            type="button"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <button
-            onClick={() => handleScroll("right")}
-            className="w-11 h-11 rounded-full border border-[#dfdfdf] bg-white hover:bg-[#f5f5f5] text-zinc-950 flex items-center justify-center transition-colors focus:ring-2 focus:ring-[#0058A3]"
-            aria-label="Volgende kaart"
-            type="button"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+        <div
+          ref={scrollContainerRef}
+          className="scrollbar-none flex snap-x snap-mandatory gap-6 overflow-x-auto pb-2"
+          tabIndex={0}
+          aria-label="Bouwstenen carrousel kaarten"
+        >
+          {CARDS.map((card) => (
+            <article
+              key={card.title}
+              className="w-[min(86vw,380px)] shrink-0 snap-start"
+            >
+              <div className="relative mb-5 aspect-square overflow-hidden bg-[#f5f5f5]">
+                <Image
+                  src={card.image}
+                  alt={card.alt}
+                  fill
+                  className="object-cover"
+                  sizes="380px"
+                />
+              </div>
+              <h3 className="text-[22px] leading-snug font-bold text-[#111111]">{card.title}</h3>
+              <p className="mt-3 text-[14px] leading-6 text-[#484848]">{card.body}</p>
+              <a
+                href={card.href}
+                className="mt-4 inline-block text-[14px] font-bold text-[#111111] underline hover:opacity-70"
+              >
+                {card.linkLabel}
+              </a>
+            </article>
+          ))}
         </div>
       </div>
-
-      {/* Cards Container */}
-      <div
-        ref={scrollContainerRef}
-        className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-6 pt-1 focus:outline-hidden"
-        tabIndex={0}
-        aria-label="Bouwstenen carrousel kaarten"
-      >
-        {/* Card 1 */}
-        <div className="snap-start shrink-0 w-[300px] sm:w-[360px] bg-[#f5f5f5] rounded-none p-6 flex flex-col justify-between border border-transparent hover:border-[#dfdfdf] transition-all group">
-          <div className="space-y-4">
-            <div className="aspect-square w-full bg-amber-100/80 border border-amber-300 flex flex-col items-center justify-center p-4 relative overflow-hidden">
-              <svg className="w-24 h-24 text-amber-800" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-                <rect x="20" y="20" width="60" height="60" rx="4" stroke="currentColor" strokeWidth="3" fill="#FDE68A" />
-                <path d="M35 35h12v12H35zM53 35h12v12H53zM35 53h12v12H35z" fill="currentColor" />
-                <path d="M53 53h6v6h-6zM59 59h6v6h-6z" fill="#0058A3" />
-                <circle cx="75" cy="25" r="12" fill="#0058A3" />
-                <path d="M71 25l3 3 5-5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              <span className="mt-4 text-[10px] font-extrabold text-amber-950 bg-white px-2 py-1 uppercase tracking-wider border border-amber-300">
-                WebAR QR Scan
-              </span>
-            </div>
-
-            <h3 className="text-2xl font-black text-zinc-950 group-hover:text-[#0058A3] transition-colors">
-              Scan & Fold
-            </h3>
-
-            <p className="text-sm text-zinc-800 leading-relaxed font-normal">
-              Een QR-code aan de binnenzijde van de doos opent een WebAR-ervaring (geen app-download nodig). De camera van je telefoon projecteert virtuele vouwlijnen direct over je fysieke IKEA doos.
-            </p>
-          </div>
-
-          <div className="pt-6 border-t border-[#dfdfdf] mt-6">
-            <a
-              href="#zo-werkt-het"
-              className="inline-flex items-center text-sm font-bold text-zinc-950 underline hover:opacity-75 gap-1.5"
-            >
-              <span>Bekijk hoe WebAR werkt</span>
-              <span aria-hidden="true">&rarr;</span>
-            </a>
-          </div>
-        </div>
-
-        {/* Card 2 */}
-        <div className="snap-start shrink-0 w-[300px] sm:w-[360px] bg-[#f5f5f5] rounded-none p-6 flex flex-col justify-between border border-transparent hover:border-[#dfdfdf] transition-all group">
-          <div className="space-y-4">
-            <div className="aspect-square w-full bg-emerald-100/70 border border-emerald-300 flex flex-col items-center justify-center p-4 relative overflow-hidden">
-              <svg className="w-24 h-24 text-emerald-800" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-                <path d="M25 75 L50 25 L75 75 Z" fill="#A7F3D0" stroke="currentColor" strokeWidth="3" />
-                <path d="M40 75 L50 50 L60 75 Z" fill="#047857" />
-                <rect x="30" y="75" width="40" height="10" fill="#065F46" rx="2" />
-                <circle cx="50" cy="38" r="4" fill="#FEF08A" />
-              </svg>
-              <span className="mt-4 text-[10px] font-extrabold text-emerald-950 bg-white px-2 py-1 uppercase tracking-wider border border-emerald-300">
-                Plantenpot Vouwpatroon
-              </span>
-            </div>
-
-            <h3 className="text-2xl font-black text-zinc-950 group-hover:text-[#0058A3] transition-colors">
-              Vouwpatronen op maat
-            </h3>
-
-            <p className="text-sm text-zinc-800 leading-relaxed font-normal">
-              <strong>Fase 1:</strong> Een bibliotheek van vooraf ontworpen vouwpatronen per doosformaat (bijv. plantenpot, opbergdoos).<br />
-              <strong>Fase 2 (AI):</strong> Voer doosafmetingen en een gewenst object in voor een uniek vouwpatroon.
-            </p>
-          </div>
-
-          <div className="pt-6 border-t border-[#dfdfdf] mt-6">
-            <span className="text-xs text-zinc-600 font-medium">
-              Van standaard patroon naar AI-maatwerk
-            </span>
-          </div>
-        </div>
-
-        {/* Card 3 */}
-        <div className="snap-start shrink-0 w-[300px] sm:w-[360px] bg-[#f5f5f5] rounded-none p-6 flex flex-col justify-between border border-transparent hover:border-[#dfdfdf] transition-all group">
-          <div className="space-y-4">
-            <div className="aspect-square w-full bg-purple-100/70 border border-purple-300 flex flex-col items-center justify-center p-4 relative overflow-hidden">
-              <svg className="w-24 h-24 text-purple-800" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-                <rect x="25" y="20" width="50" height="60" rx="4" fill="#DDD6FE" stroke="currentColor" strokeWidth="3" />
-                <circle cx="50" cy="45" r="14" fill="#7C3AED" />
-                <path d="M45 45l4 4 8-8" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
-                <path d="M35 70h30" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-              </svg>
-              <span className="mt-4 text-[10px] font-extrabold text-purple-950 bg-white px-2 py-1 uppercase tracking-wider border border-purple-300">
-                Social Challenge Filter
-              </span>
-            </div>
-
-            <h3 className="text-2xl font-black text-zinc-950 group-hover:text-purple-700 transition-colors">
-              Upcycle Challenge
-            </h3>
-
-            <p className="text-sm text-zinc-800 leading-relaxed font-normal">
-              Interactieve social media filters met maandelijkse thema&apos;s (zoals <em>Kinderkamer-editie</em> en <em>Small space-editie</em>). De IKEA community stemt op de meest vindingrijke inzendingen.
-            </p>
-          </div>
-
-          <div className="pt-6 border-t border-[#dfdfdf] mt-6">
-            <a
-              href="#out-of-the-box"
-              className="inline-flex items-center text-sm font-bold text-zinc-950 underline hover:opacity-75 gap-1.5"
-            >
-              <span>Doe mee met de competitie</span>
-              <span aria-hidden="true">&rarr;</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
       <div id="after-carousel" tabIndex={-1} />
     </section>
   );

@@ -1,27 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const notoSans = Noto_Sans({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-noto-sans",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Kartonglåda - Flat-pack. Second life. | IKEA Concept",
+  title: "Kartonglåda — Flat-pack. Second life. | IKEA",
   description:
-    "Ontdek Kartonglåda: een studentenconcept voor IKEA over circulaire verpakkingen, WebAR-vouwlijnen en karton een tweede leven geven. Minor Digital Marketing, Fontys ICT.",
+    "Ontdek Kartonglåda: geef IKEA kartonnen verpakkingen een tweede leven met WebAR-vouwlijnen, IKEA Family-punten en de campagne Out of the box.",
   robots: {
     index: false,
     follow: false,
   },
   openGraph: {
-    title: "Kartonglåda - Flat-pack. Second life. | IKEA Concept",
+    title: "Kartonglåda — Flat-pack. Second life. | IKEA",
     description:
       "Een IKEA doos is nooit zomaar klaar. Van verpakkingsafval naar nieuw project via WebAR en upcycling.",
     locale: "nl_NL",
@@ -35,11 +32,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="nl"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
-    >
-      <body className="min-h-full flex flex-col bg-white text-zinc-900 selection:bg-[#FFDA1A] selection:text-black">
+    <html lang="nl" className={`${notoSans.variable} h-full antialiased`}>
+      <body className={`${notoSans.className} min-h-full flex flex-col bg-white text-[#111111] selection:bg-[#FFDB00] selection:text-black`}>
         {children}
       </body>
     </html>

@@ -2,25 +2,25 @@ import React from "react";
 
 export default function Breadcrumbs() {
   return (
-    <nav aria-label="Kruimelpad" className="max-w-[1440px] mx-auto px-4 sm:px-8 py-4">
-      <ol className="flex items-center space-x-2 text-xs text-zinc-600 flex-wrap">
+    <nav aria-label="Kruimelpad" className="mx-auto max-w-[1400px] px-5 pt-4 pb-2 sm:px-8">
+      <ol className="flex flex-wrap items-center gap-1 text-[12px] text-[#484848]">
         <li>
-          <a href="#" className="hover:underline hover:text-zinc-950 font-normal transition-colors">
+          <a href="#" className="hover:underline hover:text-[#111111]">
             Wooninspiratie
           </a>
         </li>
-        <li aria-hidden="true" className="text-zinc-400">
+        <li aria-hidden="true" className="px-1 text-[#767676]">
           /
         </li>
         <li>
-          <a href="#" className="hover:underline hover:text-zinc-950 font-normal transition-colors">
+          <a href="#" className="hover:underline hover:text-[#111111]">
             Duurzaam leven
           </a>
         </li>
-        <li aria-hidden="true" className="text-zinc-400">
+        <li aria-hidden="true" className="px-1 text-[#767676]">
           /
         </li>
-        <li className="font-bold text-zinc-950" aria-current="page">
+        <li className="font-bold text-[#111111]" aria-current="page">
           Kartonglåda
         </li>
       </ol>

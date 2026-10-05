@@ -1,146 +1,87 @@
+import Image from "next/image";
 import React from "react";
+
+const BENEFITS = [
+  "Scan de QR op de doos — geen extra app",
+  "Spaar punten per voltooid vouwproject",
+  "Digitale badges in je IKEA Family-profiel",
+  "Wissel in bij winkel- en circulaire services",
+] as const;
 
 export default function FamilyPoints() {
   return (
-    <section className="max-w-[1440px] mx-auto px-4 sm:px-8 py-10 sm:py-14 border-t border-[#dfdfdf]">
-      <div className="bg-[#0058A3] text-white rounded-none p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-lg">
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          {/* Left Column */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="flex items-center gap-3 flex-wrap">
-              <span className="px-3.5 py-1 bg-[#FFDA1A] text-black font-black text-xs uppercase tracking-wider rounded-full shadow-xs">
-                IKEA Family
-              </span>
-            </div>
-
-            <div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-                Slim hergebruiken, beloond worden
-              </h2>
-              <p className="text-lg sm:text-xl text-blue-100 mt-3 font-bold">
-                Verzamel punten met IKEA Family door jouw verpakking een tweede leven te geven.
-              </p>
-            </div>
-
-            <p className="text-sm sm:text-base text-blue-50 leading-relaxed font-normal">
-              Spaar punten bij het upcyclen van kartonnen verpakkingen. Door simpelweg de QR-code te scannen en je gemaakte creatie te delen in de app, draag je bij aan een circulaire samenleving én spaar je voor voordelen.
-            </p>
-
-            {/* Checkmark benefits list */}
-            <div className="space-y-3.5 pt-2">
-              <div className="flex items-start gap-3">
-                <span className="w-6 h-6 rounded-full bg-[#FFDA1A] text-black flex items-center justify-center font-black text-xs shrink-0 mt-0.5">
+    <section id="family-punten" className="py-16 sm:py-24">
+      <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-20">
+        <div className="max-w-[540px]">
+          <p className="text-[14px] font-bold text-[#0058A3]">IKEA Family</p>
+          <h2 className="mt-3 text-[32px] leading-[1.2] font-bold tracking-tight text-[#111111] sm:text-[36px]">
+            Een pas die je nooit meer kwijtraakt — en punten voor hergebruik
+          </h2>
+          <p className="mt-5 text-[16px] leading-7 text-[#484848]">
+            Je IKEA Family-pas zit in de IKEA app. Met Kartonglåda spaar je extra punten als je de doos een tweede leven geeft: scannen, vouwen, foto delen.
+          </p>
+          <ul className="mt-8 space-y-3">
+            {BENEFITS.map((item) => (
+              <li key={item} className="flex items-start gap-3 text-[16px] leading-6 text-[#111111]">
+                <span className="mt-1 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#111111] text-[11px] font-bold text-white">
                   ✓
                 </span>
-                <span className="text-sm sm:text-base text-white font-bold">
-                  Geen extra app-download vereist — direct scannen via de doos
-                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {["1. Scan", "2. Vouw", "3. Deel", "4. Punten"].map((step) => (
+              <div key={step} className="bg-[#f5f5f5] px-3 py-4 text-center text-[13px] font-bold">
+                {step}
               </div>
-              <div className="flex items-start gap-3">
-                <span className="w-6 h-6 rounded-full bg-[#FFDA1A] text-black flex items-center justify-center font-black text-xs shrink-0 mt-0.5">
-                  ✓
-                </span>
-                <span className="text-sm sm:text-base text-white font-bold">
-                  Spaar punten voor elk voltooid upcycle-project
-                </span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="w-6 h-6 rounded-full bg-[#FFDA1A] text-black flex items-center justify-center font-black text-xs shrink-0 mt-0.5">
-                  ✓
-                </span>
-                <span className="text-sm sm:text-base text-white font-bold">
-                  Ontvang unieke digitale badges en voordelen in jouw profiel
-                </span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="w-6 h-6 rounded-full bg-[#FFDA1A] text-black flex items-center justify-center font-black text-xs shrink-0 mt-0.5">
-                  ✓
-                </span>
-                <span className="text-sm sm:text-base text-white font-bold">
-                  In te wisselen bij IKEA winkel- en circulaire services
-                </span>
-              </div>
-            </div>
-
-            {/* Step flow */}
-            <div className="pt-4">
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center text-xs font-bold">
-                <div className="bg-white/10 backdrop-blur-xs p-3 rounded-none border border-white/20">
-                  <span className="block text-[#FFDA1A] text-sm font-black mb-0.5">1. Scan</span>
-                  <span>QR-code doos</span>
-                </div>
-                <div className="bg-white/10 backdrop-blur-xs p-3 rounded-none border border-white/20">
-                  <span className="block text-[#FFDA1A] text-sm font-black mb-0.5">2. Vouw</span>
-                  <span>Volg AR-lijnen</span>
-                </div>
-                <div className="bg-white/10 backdrop-blur-xs p-3 rounded-none border border-white/20">
-                  <span className="block text-[#FFDA1A] text-sm font-black mb-0.5">3. Deel</span>
-                  <span>Upload foto</span>
-                </div>
-                <div className="bg-white/10 backdrop-blur-xs p-3 rounded-none border border-white/20">
-                  <span className="block text-[#FFDA1A] text-sm font-black mb-0.5">4. Punten</span>
-                  <span>Ontvang beloning</span>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
+          <a
+            href="#out-of-the-box"
+            className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-[#111111] px-8 text-[14px] font-bold text-white hover:bg-[#333333]"
+          >
+            Word lid of log in
+          </a>
+        </div>
 
-          {/* Right SVG/CSS IKEA App Digital Family Card */}
-          <div className="lg:col-span-5 flex justify-center">
-            <div className="w-full max-w-sm bg-zinc-950 text-white rounded-2xl p-5 shadow-2xl border-4 border-zinc-800 space-y-4">
-              {/* App Status Bar */}
-              <div className="flex justify-between items-center text-[10px] text-zinc-400 px-2 font-mono">
+        <div className="relative mx-auto w-full max-w-[380px]">
+          <div className="overflow-hidden rounded-[36px] border-[10px] border-[#111111] bg-[#111111] shadow-[0_20px_60px_rgba(0,0,0,0.18)]">
+            <div className="bg-[#f5f5f5] px-5 pt-4 pb-8">
+              <div className="mb-4 flex items-center justify-between text-[11px] text-[#484848]">
                 <span>09:41</span>
-                <div className="flex items-center gap-1">
-                  <span>5G</span>
-                  <div className="w-4 h-2 bg-white rounded-xs" />
-                </div>
+                <span>IKEA</span>
               </div>
-
-              {/* App Header */}
-              <div className="flex justify-between items-center border-b border-zinc-800 pb-3 px-1">
-                <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 bg-[#0058A3] text-[#FFDA1A] font-black text-xs flex items-center justify-center rounded-xs">
-                    IKEA
-                  </div>
-                  <span className="text-xs font-bold">IKEA App</span>
-                </div>
+              <div className="mb-4 flex items-center gap-2">
+                <span className="bg-[#0058A3] px-1.5 py-0.5 text-[10px] font-black tracking-tight text-[#FFDB00]">
+                  IKEA
+                </span>
+                <span className="text-[13px] font-bold">Family</span>
               </div>
-
-              {/* Digital Family Card */}
-              <div className="bg-gradient-to-br from-[#0058A3] to-[#003B6D] p-5 rounded-xl space-y-4 border border-blue-400/30 relative overflow-hidden shadow-inner">
-                <div className="flex justify-between items-start">
+              <div className="relative overflow-hidden bg-[#0058A3] p-5 text-white">
+                <p className="text-[11px] font-bold tracking-wide text-[#FFDB00] uppercase">
+                  IKEA Family lid
+                </p>
+                <p className="mt-1 text-[20px] font-bold">Alex de Vries</p>
+                <div className="mt-5 flex items-center justify-between bg-white p-3 text-[#111111]">
                   <div>
-                    <span className="text-[10px] uppercase font-black text-[#FFDA1A] tracking-wider block">
-                      IKEA Family Lid
-                    </span>
-                    <h4 className="text-lg font-black text-white">
-                      Alex de Vries
-                    </h4>
+                    <p className="text-[11px] font-bold text-[#484848] uppercase">Kartonglåda punten</p>
+                    <p className="text-[15px] font-bold">Actief upcycler</p>
                   </div>
-                  <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center text-xs font-black text-[#FFDA1A]">
-                    Å
-                  </div>
-                </div>
-
-                {/* QR Code Graphic */}
-                <div className="bg-white p-3 rounded-lg flex items-center justify-between">
-                  <div className="space-y-1">
-                    <span className="text-[10px] font-extrabold text-zinc-500 block uppercase">
-                      Kartonglåda Punten
-                    </span>
-                    <span className="text-sm font-black text-zinc-950 block">
-                      Status: Actief Upcycler
-                    </span>
-                  </div>
-                  <svg className="w-12 h-12 text-zinc-950" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm8-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm14 2h2v4h-2v-4zm-4-2h2v2h-2v-2zm2 4h2v2h-2v-2zm-2-4h2v2h-2v-2zm4-2h2v2h-2v-2z" />
+                  <svg className="h-12 w-12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm8-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm13-2h5v5h-5v-5zm2 7h3v3h-3v-3z" />
                   </svg>
                 </div>
-
-                <div className="flex justify-between items-center text-[10px] text-blue-200 font-medium">
-                  <span>Pasnummer: 9988 **** 1234</span>
-                </div>
+                <p className="mt-3 text-[11px] text-white/80">Pasnummer 9988 **** 1234</p>
+              </div>
+              <div className="relative mt-4 h-36 overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1609220136736-443140cffec6?auto=format&fit=crop&w=800&q=80"
+                  alt="Gezin in een lichte woonkamer"
+                  fill
+                  className="object-cover"
+                  sizes="340px"
+                />
               </div>
             </div>
           </div>
