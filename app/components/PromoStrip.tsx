@@ -34,6 +34,30 @@ export default function PromoStrip() {
           </svg>
           <span>Bezorging vanaf 2.99 voor IKEA Family leden</span>
         </a>
+        <div className="flex items-center justify-end gap-6">
+          <button
+            type="button"
+            className="inline-flex items-center gap-2 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            aria-label="Voer postcode in"
+          >
+            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+              <path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v9A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5v-9Z" />
+              <path d="M8 9h8M8 13h8" />
+            </svg>
+            <span>Enter postcode</span>
+          </button>
+
+          <button
+            type="button"
+            className="inline-flex items-center gap-2 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            aria-label="Select store"
+          >
+            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.25a6.75 6.75 0 0 0-6.75 6.75c0 5.06 6.75 12.75 6.75 12.75s6.75-7.69 6.75-12.75A6.75 6.75 0 0 0 12 2.25Zm0 9.5A2.75 2.75 0 1 1 12 6.25a2.75 2.75 0 0 1 0 5.5Z" />
+            </svg>
+            <span>Select store</span>
+          </button>
+        </div>
       </div>
     </div>
   );

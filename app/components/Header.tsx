@@ -46,7 +46,7 @@ export default function Header() {
         </button>
 
         <a href="#" className="shrink-0" aria-label="IKEA Startpagina">
-          <IkeaLogo className="h-8 w-auto sm:h-9" />
+          <IkeaLogo className="h-[48px] w-auto sm:h-[55px]" />
         </a>
 
         <nav aria-label="Hoofdnavigatie" className="hidden flex-1 items-center gap-7 lg:flex">
