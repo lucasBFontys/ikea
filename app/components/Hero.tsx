@@ -42,12 +42,12 @@ export default function Hero() {
 
         <div className="relative min-h-[46vh] lg:min-h-full">
           <Image
-            src="https://images.unsplash.com/photo-1615874959471-b27add55b000?auto=format&fit=crop&w=1800&q=80"
-            alt="Lichte woonkamer met houten meubels, planten en kartonnen dozen klaar voor een tweede leven"
+            src="https://plus.unsplash.com/premium_photo-1663089888546-e9b29c1e0b30?auto=format&fit=crop&w=1600&q=80"
+            alt="Vrolijk stel draagt verhuisdozen hun nieuwe appartement binnen"
             fill
             priority
             className="object-cover"
-            sizes="(min-width: 1024px) 50vw, 100vw"
+            sizes="(min-width: 800px) 50vw, 100vw"
           />
         </div>
       </div>
